@@ -1,0 +1,29 @@
+Year-Month-Day
+2015-01-01
+2015-01-19
+2015-02-16
+2015-04-03
+2015-05-25
+2015-07-03
+2015-07-04
+2015-09-07
+2015-11-26
+2015-12-25
+
+
+2015-01-01 - New Years Day
+2015-01-19 - Martin Luther King Jr. Day
+2015-02-16 - Washington's Birthday
+2015-04-03 - Good Friday
+2015-05-25 - Memorial Day
+2015-07-03 - Day before Independence Day (only this year because Independence Day was a saturday)
+2015-07-04 - Independence Day
+2015-09-07 - Labor Day
+2015-11-26 - Thanksgiving Day
+2015-12-25 - Christmas Day
+
+
+
+
+Some days like Labor day and good friday are based on days of the week. so it will differ per Year
+http://www.thestreet.com/stock-market-news/11771386/market-holidays-2015.html
