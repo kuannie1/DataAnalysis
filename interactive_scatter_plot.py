@@ -4,7 +4,8 @@ import plotly.graph_objs as go
 import plotly.tools as tls
 from yahoo_finance import Share
 from pprint import pprint
-tls.set_credentials_file(username='umadesai', api_key='tlqzgdjqoz')
+from keys import api_username, api_key
+tls.set_credentials_file(api_username, api_key)
 
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
