@@ -4,6 +4,7 @@ import plotly.graph_objs as go
 import plotly.tools as tls
 from yahoo_finance import Share
 from pprint import pprint
+tls.set_credentials_file(username='umadesai', api_key='tlqzgdjqoz')
 
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
@@ -22,7 +23,7 @@ def get_stocks(stockName, startDate, endDate):
     return dates, values
 
 def interactive_scatter_plot(stockName, startDate, endDate):
-    tls.set_credentials_file(username='umadesai', api_key='tlqzgdjqoz')
+    
 
     stock_info = get_stocks(stockName, startDate, endDate)
     trace0 = go.Scatter(

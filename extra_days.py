@@ -4,6 +4,10 @@ from pattern.web import URL, extension, download
 import pickle
 from selenium import webdriver
 
+
+#This script is for the days that are blocked due to the captchas in google
+#1: Add a few days before the range of missing days, run the code
+#2: Once the firefox window opens, enter the 
 driver = webdriver.Firefox()
 dates = [(12, 29, 2014), (12, 30, 2014), (12, 31, 2014), (1, 1, 2015), (1, 2, 2015), (1, 3, 2015), (1, 4, 2015), (1, 5, 2015), (1, 6, 2015), (1, 7, 2015), (1, 8, 2015), (1, 9, 2015), (1, 10, 2015)]
 #For loop to iterate through the days:
