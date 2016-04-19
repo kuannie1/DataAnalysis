@@ -6,6 +6,8 @@ from yahoo_finance import Share
 from pprint import pprint
 from keys import api_username, api_key
 tls.set_credentials_file(api_username, api_key)
+import pickle
+
 
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
@@ -20,7 +22,6 @@ def get_stocks(stockName, startDate, endDate):
             actualOpen = item.get('Open')
         dates += ([actualDate])
         values += ([actualOpen])
-
     return dates, values
 
 def interactive_scatter_plot(stockName, startDate, endDate):
@@ -75,6 +76,6 @@ def interactive_scatter_plot(stockName, startDate, endDate):
             )
     )
     fig = go.Figure(data=data, layout=layout)
-    plotly.offline.plot(fig, filename='stockprice_v_publicopinion')
+    plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
 
 interactive_scatter_plot('LOCO', '2015-01-01', '2015-12-31')

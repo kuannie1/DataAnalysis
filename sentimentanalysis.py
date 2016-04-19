@@ -12,22 +12,19 @@ complete_list_of_dates = pickle.load(fin)
 fin.close()
 #Changing the directory so that the sentiment pickle file is stored with all the google results 
 import os
-
-path = "/home/anne/DataAnalysis/2016_Google_Results"
-
+path = "/home/anne/DataAnalysis/El_Pollo_Loco/2016_Google_Results"
 # Check current working directory.
 retval = os.getcwd()
 print "Current working directory %s" % retval
-
 # Now change the directory
 os.chdir( path )
-
 # Check current working directory.
 retval = os.getcwd()
-
 print "Directory changed successfully %s" % retval
 
 def daily_sentiments_function():
+	"""
+	"""
 	daily_sentiments_dictionary = {}
 	for date in complete_list_of_dates:
 		year = date[2]
