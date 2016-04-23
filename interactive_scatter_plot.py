@@ -8,7 +8,7 @@ from keys import api_username, api_key
 tls.set_credentials_file(api_username, api_key)
 import pickle
 
-company_to_stock = {'El Pollo Loco':'LOCO', }
+company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
     dates = []
@@ -123,4 +123,8 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
     fig = go.Figure(data=data, layout=layout)
     plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
 
-interactive_scatter_plot('Chipotle', 'CMG', '2015-01-02', '2015-12-31')
+company = 'Chipotle'
+stock = company_to_stock[company]
+start_day = '2015-01-02'
+end_day = '2015-12-31'
+interactive_scatter_plot(company, stock, start_day, end_day)
