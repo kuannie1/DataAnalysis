@@ -1,7 +1,7 @@
 #Should return a list with all the days that are viable for 2013, 2014, 2015, 2016
 from datetime import datetime, time
 import pickle
-
+import os
 
 dates_list = []
 days = range(1, 32)
@@ -100,7 +100,23 @@ def before_today_dates(complete_date_list):
 	return list_of_dates
 
 final_list_of_dates = before_today_dates(list_of_days) #the final final list! Whoohoo!
+naming_convention_year = str(years[0])
+fin2 = open('list_of_days_{}.pickle'.format(naming_convention_year), 'w')
+pickle.dump(final_list_of_dates, fin2)
+fin2.close()
 
-fin2 = open('list_of_days.pickle', 'w')
+
+path = "/home/anne/DataAnalysis/Sentiment_Dictionaries"
+# Check current working directory.
+retval = os.getcwd()
+print "Current working directory %s" % retval
+# Now change the directory
+os.chdir( path )
+# Check current working directory.
+retval = os.getcwd()
+print "Directory changed successfully %s" % retval
+
+
+fin2 = open('list_of_days_{}.pickle'.format(naming_convention_year), 'w')
 pickle.dump(final_list_of_dates, fin2)
 fin2.close()

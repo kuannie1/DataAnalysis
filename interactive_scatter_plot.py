@@ -7,8 +7,14 @@ from pprint import pprint
 from keys import api_username, api_key
 tls.set_credentials_file(api_username, api_key)
 import pickle
+import os
+
+#For your computer path and convenience:
+your_first_name = 'anne'
 
 company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
+
+
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
     dates = []
@@ -26,6 +32,17 @@ def get_stocks(stockName, startDate, endDate):
 
 def get_sentiments(companyName, startDate, endDate):
     #Part 1: Getting the sentiment values for this date range:
+    #Changing the directory so that the sentiment pickle file is stored with all the google results 
+    import os
+    path = "/home/{}/DataAnalysis/Sentiment_Dictionaries".format(your_first_name)
+    # Check current working directory.
+    retval = os.getcwd()
+    print "Current working directory %s" % retval
+    # Now change the directory
+    os.chdir( path )
+    # Check current working directory.
+    retval = os.getcwd()
+    print "Directory changed successfully %s" % retval
 
     start_y, start_m, start_d = map(int, startDate.split('-'))
     end_y, end_m, end_d = map(int, endDate.split('-'))
@@ -34,7 +51,7 @@ def get_sentiments(companyName, startDate, endDate):
     formatted_endDate = (end_m, end_d, end_y)
 
     #Get all the days from list_of_days.pickle list:
-    fin = open('list_of_days.pickle')
+    fin = open('list_of_days_{}.pickle'.format(start_y))
     complete_list_of_dates = pickle.load(fin)
     fin.close()
     #Getting the indexes of the range:
@@ -44,6 +61,7 @@ def get_sentiments(companyName, startDate, endDate):
     range_of_dates = complete_list_of_dates[startdate_index:enddate_index + 1]
 
     f = open('{}_{}_sentiments.pickle'.format(companyName, start_y))
+    # f = open('{}_headlines_sentiments.pickle'.format(companyName))
     company_dictionary_of_greatness = pickle.load(f)
     f.close()
     values = [] #sentiment values
@@ -65,7 +83,17 @@ def get_sentiments(companyName, startDate, endDate):
     return dates, values
 
 
-# print get_sentiments('Chipotle', '2015-1-5', '2015-1-15')
+#changing the directory back to normal:
+path = "/home/{}/DataAnalysis".format(your_first_name)
+# Check current working directory.
+retval = os.getcwd()
+print "Current working directory %s" % retval
+# Now change the directory
+os.chdir( path )
+# Check current working directory.
+retval = os.getcwd()
+print "Directory changed successfully %s" % retval
+
 
 
 def interactive_scatter_plot(companyName, stockName, startDate, endDate):
@@ -122,6 +150,7 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
     )
     fig = go.Figure(data=data, layout=layout)
     plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
+
 
 company = 'Chipotle'
 stock = company_to_stock[company]
