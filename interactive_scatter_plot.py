@@ -10,10 +10,8 @@ import pickle
 import os
 from BP_headline_provider_script import BP_cursor_string_list
 #For your computer path and convenience:
-ubuntu_username = 'anne'
+ubuntu_username = 'udesai'
 company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
-
-print BP_cursor_string_list
 
 
 
@@ -115,8 +113,8 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
     sentiments = sentiment_info[1]
     # for i in range(2, len(sentiments)-1):
     #     sentiments[i] = (sentiments[i-1] + sentiments[i] + sentiments[i+1])/3
-    for i in range(3, len(sentiments)-2):
-        sentiments[i] = (sentiments[i-2] + sentiments[i-1] + sentiments[i] + sentiments[i+1] + sentiments[i+2])/5
+    for i in range(5, len(sentiments)-4):
+        sentiments[i] = (sentiments[i-4] + sentiments[i-3] + sentiments[i-2] + sentiments[i-1] + sentiments[i] + sentiments[i+1] + sentiments[i+2] + sentiments[i+3] + sentiments[i+4])/9
     trace1 = go.Scatter(
         x = sentiment_info[0],
         y = sentiments,
@@ -127,7 +125,7 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
                    ),
         name='Public Opinion',
         yaxis = 'y2',
-        text=[],
+        text=BP_cursor_string_list,
             )
 
     data = [trace0, trace1]

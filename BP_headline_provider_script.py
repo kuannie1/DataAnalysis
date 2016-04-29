@@ -1,15 +1,15 @@
 from pattern.web import *
 import pickle
 
-import indicoio
-from keys import indico_api_key
-indicoio.config.api_key = indico_api_key
+# import indicoio
+# from keys import indico_api_key
+# indicoio.config.api_key = indico_api_key
 import os
 
 
 
-company = 'Chevron'
-ubuntu_username = 'anne'
+company = 'BP'
+ubuntu_username = 'udesai'
 #The result we want to store:
 BP_cursor_string_list = []
 
@@ -85,6 +85,5 @@ for i in range(num_of_dates):
 	BP_cursor_string_list.append(str(newssource_list[i] + " : " + headlines_list[i]))
 
 
+
 print BP_cursor_string_list
-
-
