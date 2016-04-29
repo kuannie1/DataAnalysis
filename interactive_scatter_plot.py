@@ -10,10 +10,8 @@ import pickle
 import os
 
 #For your computer path and convenience:
-your_first_name = 'anne'
-
+your_first_name = 'udesai'
 company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
-
 
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
@@ -95,16 +93,14 @@ retval = os.getcwd()
 print "Directory changed successfully %s" % retval
 
 
-
 def interactive_scatter_plot(companyName, stockName, startDate, endDate):
-    
 
     stock_info = get_stocks(stockName, startDate, endDate)
     trace0 = go.Scatter(
         x = stock_info[0],
         y = stock_info[1],
 
-        mode='markers',
+        mode='lines',
         marker=dict(size=12,
                     line=dict(width=1)
                    ),
@@ -112,11 +108,16 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
         text=[],
         )
     sentiment_info = get_sentiments(companyName, startDate, endDate)
+    sentiments = sentiment_info[1]
+    # for i in range(2, len(sentiments)-1):
+    #     sentiments[i] = (sentiments[i-1] + sentiments[i] + sentiments[i+1])/3
+    for i in range(3, len(sentiments)-2):
+        sentiments[i] = (sentiments[i-2] + sentiments[i-1] + sentiments[i] + sentiments[i+1] + sentiments[i+2])/5
     trace1 = go.Scatter(
         x = sentiment_info[0],
-        y = sentiment_info[1],
+        y = sentiments,
 
-        mode='markers',
+        mode='lines',
         marker=dict(size=12,
                     line=dict(width=1)
                    ),
@@ -151,9 +152,8 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
     fig = go.Figure(data=data, layout=layout)
     plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
 
-
-company = 'Chipotle'
+company = 'BP'
 stock = company_to_stock[company]
-start_day = '2015-01-02'
-end_day = '2015-12-31'
+start_day = '2010-02-02'
+end_day = '2010-12-31'
 interactive_scatter_plot(company, stock, start_day, end_day)
