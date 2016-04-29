@@ -8,10 +8,14 @@ from keys import api_username, api_key
 tls.set_credentials_file(api_username, api_key)
 import pickle
 import os
-
+from BP_headline_provider_script import BP_cursor_string_list
 #For your computer path and convenience:
-your_first_name = 'udesai'
+ubuntu_username = 'anne'
 company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
+
+print BP_cursor_string_list
+
+
 
 def get_stocks(stockName, startDate, endDate): 
     company = Share(stockName)
@@ -32,7 +36,7 @@ def get_sentiments(companyName, startDate, endDate):
     #Part 1: Getting the sentiment values for this date range:
     #Changing the directory so that the sentiment pickle file is stored with all the google results 
     import os
-    path = "/home/{}/DataAnalysis/Sentiment_Dictionaries".format(your_first_name)
+    path = "/home/{}/DataAnalysis/Sentiment_Dictionaries".format(ubuntu_username)
     # Check current working directory.
     retval = os.getcwd()
     print "Current working directory %s" % retval
@@ -82,7 +86,7 @@ def get_sentiments(companyName, startDate, endDate):
 
 
 #changing the directory back to normal:
-path = "/home/{}/DataAnalysis".format(your_first_name)
+path = "/home/{}/DataAnalysis".format(ubuntu_username)
 # Check current working directory.
 retval = os.getcwd()
 print "Current working directory %s" % retval
