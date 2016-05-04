@@ -17,45 +17,45 @@ fin2.close()
 
 
 
-# #Changing the directory so that the headline files are stored in a convenient place
-# import os
+#Changing the directory so that the headline files are stored in a convenient place
+import os
 
-# path = "/home/anne/DataAnalysis/Valero/2010_headlines"
+path = "/home/anne/DataAnalysis/Valero/2010_headlines"
 
-# # Check current working directory.
-# retval = os.getcwd()
-# print "Current working directory %s" % retval
+# Check current working directory.
+retval = os.getcwd()
+print "Current working directory %s" % retval
 
-# # Now change the directory
-# os.chdir( path )
+# Now change the directory
+os.chdir( path )
 
-# # Check current working directory.
-# retval = os.getcwd()
+# Check current working directory.
+retval = os.getcwd()
 
-# print "Directory changed successfully %s" % retval
+print "Directory changed successfully %s" % retval
 
 company = 'Valero'
 
 
-# #For loop to iterate through the days:
-# for date in complete_list_of_dates_2010:
-# 	month = date[0]
-# 	day = date[1]
-# 	year = date[2]
+#For loop to iterate through the days:
+for date in complete_list_of_dates_2010:
+	month = date[0]
+	day = date[1]
+	year = date[2]
 
-# 	result = []
-# 	f = open('{}_{}_{}_{}_headlines.pickle'.format(company, month, day, year), 'w')
-# 	#What to put in the open() URL area for Chipotle: 'https://www.google.com/#q=Chipotle+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm='.format(month, day-1, year, month, day, year)
-# 	#for El Pollo Loco: https://www.google.com/#q=el+pollo+loco+news&tbs=cdr%3A%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm=
-# 	#For Apple: https://www.google.com/#q=apple+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm=
+	result = []
+	f = open('{}_{}_{}_{}_headlines.pickle'.format(company, month, day, year), 'w')
+	#What to put in the open() URL area for Chipotle: 'https://www.google.com/#q=Chipotle+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm='.format(month, day-1, year, month, day, year)
+	#for El Pollo Loco: https://www.google.com/#q=el+pollo+loco+news&tbs=cdr%3A%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm=
+	#For Apple: https://www.google.com/#q=apple+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm=
 
-# 	driver.get('https://www.google.com/#q=valero+energy+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm='.format(month, day-1, year, month, day, year))
-# 	time.sleep(2) #note: month, day, year
-# 	driver.find_elements_by_class_name("r")
-# 	for res in driver.find_elements_by_class_name('r'):
-# 		result.append(str(res.text.encode('ascii', 'ignore').decode('ascii')))
-# 	pickle.dump(result, f)
-# 	f.close()
+	driver.get('https://www.google.com/#q=valero+energy+news&tbs=cdr%3A1%2Ccd_min%3A{}%2F{}%2F{}%2Ccd_max%3A{}%2F{}%2F{}&tbm='.format(month, day-1, year, month, day, year))
+	time.sleep(2) #note: month, day, year
+	driver.find_elements_by_class_name("r")
+	for res in driver.find_elements_by_class_name('r'):
+		result.append(str(res.text.encode('ascii', 'ignore').decode('ascii')))
+	pickle.dump(result, f)
+	f.close()
 
 
 

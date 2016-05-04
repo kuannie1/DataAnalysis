@@ -6,15 +6,13 @@ import os
 dates_list = []
 days = range(1, 32)
 months = range(1, 13)
-years = [2010] 
-
+year = 2010
 special_months = [2, 4, 6, 9, 11]
 
 def making_all_the_days(): #includes the impossible days
-	for year in years:
-		for month in months:
-			for day in days:
-				dates_list.append((month, day, year))
+	for month in months:
+		for day in days:
+			dates_list.append((month, day, year))
 	return dates_list
 
 inclusive_dates = making_all_the_days()
@@ -23,8 +21,6 @@ inclusive_dates = making_all_the_days()
 def removing_dates(every_single_date_list):
 	date_list = []
 	for (month, day, year) in every_single_date_list:
-		boolean_leapyear = (month == 2) and (day == 30)
-		boolean_nonleapyear = (month == 2) and ((day == 29) or (day == 30))
 
 		if ((year % 4) != 0): #When the year isn't a leap one
 			if month == 2 and day == 29:
@@ -100,7 +96,7 @@ def before_today_dates(complete_date_list):
 	return list_of_dates
 
 final_list_of_dates = before_today_dates(list_of_days) #the final final list! Whoohoo!
-naming_convention_year = str(years[0])
+naming_convention_year = str(year)
 fin2 = open('list_of_days_{}.pickle'.format(naming_convention_year), 'w')
 pickle.dump(final_list_of_dates, fin2)
 fin2.close()
@@ -120,3 +116,9 @@ print "Directory changed successfully %s" % retval
 fin2 = open('list_of_days_{}.pickle'.format(naming_convention_year), 'w')
 pickle.dump(final_list_of_dates, fin2)
 fin2.close()
+
+
+
+
+
+
