@@ -27,8 +27,6 @@ An example of the format for calling this function is:
 
 interactive_scatter_plot('LOCO', '2015-01-01', '2015-12-31')
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/18.embed"></iframe>
-
 This function call produces a scatterplot comparing the public opinion and stock market values of El Pollo Loco between January 1st and December 31st of 2015. To run interactive_scatter_plot.py scroll to the end of the code and change the interactive_scatter_plot() to contain the company and dates you desire to see the results of. 
 
 There are two different ways to run our code-one with pickle files, and one with real-time calling. 
