@@ -3,13 +3,17 @@ from datetime import datetime, time
 import pickle
 import os
 
+#Initial values and empty lists, for making a list of dates the stock market is open
 dates_list = []
 days = range(1, 32)
 months = range(1, 13)
 year = 2010
 special_months = [2, 4, 6, 9, 11]
 
-def making_all_the_days(): #includes the impossible days
+def making_all_the_days(): 
+	"""
+	Makes a list of tuples, includes the impossible days (days that will never exist)
+	"""
 	for month in months:
 		for day in days:
 			dates_list.append((month, day, year))
@@ -19,6 +23,10 @@ inclusive_dates = making_all_the_days()
 
 
 def removing_dates(every_single_date_list):
+	"""
+	Given a total total list of dates, removes impossible days due to leap years
+	"""
+
 	date_list = []
 	for (month, day, year) in every_single_date_list:
 
