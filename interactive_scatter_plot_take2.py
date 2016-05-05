@@ -11,11 +11,13 @@ import os
 from helperfunctions import *
 #DELETE: For your computer path and convenience:
 # ubuntu_username = 'udesai'
-company_to_stock = {'El_Pollo_Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon_Mobil':'XOM'}
-
-
+company_to_stock = {'El Pollo Loco':'LOCO', 'Chipotle':'CMG', 'Valero':'VLO', 'BP':'BP', 'Chevron':'CVX', 'Exxon Mobil':'XOM'}
 
 def get_stocks(stockName, startDate, endDate): 
+    """function that calls the yahoo finance API to get the stock value prices
+
+    input: company stockName, startDate and endDate in 'YYYY-MM-DD' format"""
+
     company = Share(stockName)
     dates = []
     values = []
@@ -31,15 +33,26 @@ def get_stocks(stockName, startDate, endDate):
     return dates, values
 
 def get_sentiments(companyName, startDate, endDate):
-	return combining_everything_together(companyName, startDate, endDate)[1] #sentiment values
+    """
+    function that depends on helperfunctions.py script. Returns all the sentiments and all the cursor
+    texts in a list like this: [cursortext, sentimentvalues]
+    """
+    return combining_everything_together(companyName, startDate, endDate) #sentiment values
 
 def interactive_scatter_plot(companyName, stockName, startDate, endDate):
-	list_sentiments_cursor = get_sentiments(companyName, startDate, endDate)
-	sentiments = list_sentiments_cursor[1]
-	cursor_stuff = get_sentiments[0]
+    """
+    Takes in values from last two functions and plots the results. 
+    """
 
-	stock_info = get_stocks(stockName, startDate, endDate)
-	trace0 = go.Scatter(
+    list_sentiments_cursor = get_sentiments(companyName, startDate, endDate)
+    #sentiment values
+    sentiments = list_sentiments_cursor[1]
+    #cursor text
+    cursor_stuff = list_sentiments_cursor[0]
+
+
+    stock_info = get_stocks(stockName, startDate, endDate)
+    trace0 = go.Scatter(
         x = stock_info[0],
         y = stock_info[1],
 
@@ -50,16 +63,8 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
         name='Stock Price',
         text=[],
         )
-    
-    # sentiments = sentiment_info[1]
 
-    # for i in range(2, len(sentiments)-1):
-    #     sentiments[i] = (sentiments[i-1] + sentiments[i] + sentiments[i+1])/3
-    
-
-    # for i in range(5, len(sentiments)-4):
-    #     sentiments[i] = (sentiments[i-4] + sentiments[i-3] + sentiments[i-2] + sentiments[i-1] + sentiments[i] + sentiments[i+1] + sentiments[i+2] + sentiments[i+3] + sentiments[i+4])/9
-	trace1 = go.Scatter(
+    trace1 = go.Scatter(
         x = stock_info[0],
         y = sentiments,
 
@@ -72,8 +77,10 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
         text= cursor_stuff,
             )
 
-	data = [trace0, trace1]
-	layout = go.Layout(
+    data = [trace0, trace1]
+
+    #Layout, determines features of the graph
+    layout = go.Layout(
         title=str(stockName)+' from '+str(startDate) + ' to ' + str(endDate),
         hovermode='closest',
         xaxis=dict(
@@ -95,12 +102,14 @@ def interactive_scatter_plot(companyName, stockName, startDate, endDate):
             side='right'
             )
     )
-	fig = go.Figure(data=data, layout=layout)
-	plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
+    fig = go.Figure(data=data, layout=layout)
+    plotly.offline.plot(fig, filename='stockprice_v_publicopinion.html')
 
+
+
+#Users, plug in values here!
 company = 'Chipotle'
 stock = company_to_stock[company]
 start_day = '2015-01-02'
-end_day = '2015-12-31'
+end_day = '2015-01-09'
 interactive_scatter_plot(company, stock, start_day, end_day)
-#one full year = 127.79 minutes to run! That's like, 2 hours and 8 minutes

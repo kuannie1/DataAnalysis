@@ -30,3 +30,13 @@ interactive_scatter_plot('LOCO', '2015-01-01', '2015-12-31')
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/18.embed"></iframe>
 
 This function call produces a scatterplot comparing the public opinion and stock market values of El Pollo Loco between January 1st and December 31st of 2015. To run interactive_scatter_plot.py scroll to the end of the code and change the interactive_scatter_plot() to contain the company and dates you desire to see the results of. 
+
+There are two different ways to run our code-one with pickle files, and one with real-time calling. 
+If you want to customize which company and stock prices you would like to see, use the real-time method where you replace values in the interactive_scatter_plot_take2.py. Unfortunately this method takes a long time. interactive_scatter_plot_take2.py is very inconvenient for a large date range.
+
+Alternatively, you can run interactive_scatter_plot.py, but the options you can pass are restrained. If you input these companies: BP, Valero, Chevron, and Exxon_Mobil, the plot will only display results in the year 2010. If you run these companies: Chipotle and El_Pollo_Loco, you can only get results in the year 2015. This method is a lot faster, because it doesn't have to webcrawl to run. 
+
+
+
+
+
