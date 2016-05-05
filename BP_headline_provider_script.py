@@ -1,17 +1,14 @@
 from pattern.web import *
 import pickle
-
-# import indicoio
-# from keys import indico_api_key
-# indicoio.config.api_key = indico_api_key
 import os
 
-
-
-company = 'BP'
+# company = 'Chevron'
 ubuntu_username = 'anne'
 #The result we want to store:
 BP_cursor_string_list = []
+
+
+
 
 if company in ['El_Pollo_Loco', 'Chipotle']:
 	year = '2015'
@@ -83,7 +80,3 @@ print "Directory changed successfully %s" % retval
 
 for i in range(num_of_dates):
 	BP_cursor_string_list.append(str(newssource_list[i] + " : " + headlines_list[i]))
-
-
-
-print BP_cursor_string_list

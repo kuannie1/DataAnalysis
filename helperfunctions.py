@@ -73,7 +73,7 @@ def get_store_googleresults(company, startDate, endDate): #runs google webcrawli
 			if char != " ":
 				company_plusses += char
 				company_underscores += char
-			else:
+			else:s
 				company_plusses += "+"
 				company_underscores += "_"
 	else:

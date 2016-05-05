@@ -53,6 +53,10 @@ reasonable_days = removing_dates(inclusive_dates)
 
 
 def filtering_for_weekdays(reasonable_date_list):
+	"""
+	Deleting the weekend days, since the stock market isn'
+	"""
+
 	weekdays = []
 	for res in reasonable_date_list:
 		# print res[2] + res[0] + res[1]
