@@ -34,4 +34,5 @@ If you want to customize which company and stock prices you would like to see, u
 
 Alternatively, you can run interactive_scatter_plot.py, but the options you can pass are restrained. If you input these companies: BP, Valero, Chevron, and Exxon_Mobil, the plot will only display results in the year 2010. If you run these companies: Chipotle and El_Pollo_Loco, you can only get results in the year 2015. This method is a lot faster, because it doesn't have to webcrawl to run. If you use this option, you'll notice that interactive_scatter_plot.py has a variable called "ubuntu_username". Replace "anne" your name or username for your computer, because that variable is essential to finding the files. 
 
-
+Our website can be found at:
+http://kuannie1.github.io/DataAnalysis/
