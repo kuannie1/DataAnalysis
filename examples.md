@@ -15,10 +15,10 @@ These are interesting examples of how our program can be used to analyze the tre
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/28.embed?autosize=True&link=false&modebar=false&height=350"></iframe>
 
 <!-- Valero -->
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/30.embed?autosize=True&link=false&modebar=false&height=250"></iframe>
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/32.embed?autosize=True&link=false&modebar=false&height=350"></iframe>
 
 <!-- Exxon Mobil -->
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/30.embed"></iframe>
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/34.embed?autosize=True&link=false&modebar=false&height=350"></iframe>>
 
 <!-- 
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/24.embed?autosize=True&link=false&modebar=false&height=450"></iframe>
