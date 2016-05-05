@@ -18,6 +18,6 @@ Some members wanted to investigate data analytics, while others wanted to focus 
 # Features:
 Our correlation tool produces a graph that overlays a company’s public opinion and stock values on an interactive scatter plot. The x axis represents the time period that the user inputs into our program, the left y axis represents the range of stock values, and the right y axis represents the range of public opinion values. When the user moves the cursor over a data point, they are able to see the numerical value of the data point and, for public opinion values, the top headline of google search results for the company that day. The graph also has zooming, panning, and selecting capabilities that allow the user to zoom in on the information for specific time periods on the graph. All of these features work to help the user draw a connection between events that skewed public opinion of a company and the resulting effect it had on the company’s stock price.
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/20.embed?autosize=True&link=false&modebar=false&height=450"></iframe>
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~umadesai/30.embed?autosize=True&link=false&modebar=false&height=450"></iframe>
 
-This is an example of one of the graphs that our tool can output when the inputs ‘Chipotle', ‘2015-02-02', and ‘2015-12-31' are entered into the interactive_scatter_plot.py function as the company name, start date, and end date. 
+This is an example of one of the graphs that our tool can output when the inputs ‘Chipotle', ‘2015-01-02', and ‘2015-12-31' are entered into the interactive_scatter_plot.py function as the company name, start date, and end date. 
