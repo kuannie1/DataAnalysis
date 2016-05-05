@@ -4,7 +4,6 @@ layout: template
 filename: future_work
 ---
 
-## Future Work
 # Our next steps include:
 - Adding  features to the graph that make it more user-friendly and provide more interesting information (i.e. range slider, dropdown menu, etc.).
 - Creating a webpage that makes our tool more accessible to users
