@@ -36,3 +36,4 @@ Alternatively, you can run interactive_scatter_plot.py, but the options you can 
 
 Our website can be found at:
 http://kuannie1.github.io/DataAnalysis/
+Links to our deliberables can be found here.
