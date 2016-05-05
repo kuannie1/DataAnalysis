@@ -6,4 +6,4 @@ filename: iterations
 
 # Iterations
 
-![Iteration](https://octodex.github.com/images/yaktocat.png)
+![Iteration](https://github.com/kuannie1/DataAnalysis/blob/gh-pages/first_iteration.png)

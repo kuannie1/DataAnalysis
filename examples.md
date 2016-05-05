@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: Example Graphs
 layout: template
 filename: examples
 ---
