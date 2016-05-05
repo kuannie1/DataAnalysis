@@ -1,5 +1,5 @@
 ---
-title: Home
+title: The Big Idea
 layout: template
 filename: index
 ---
