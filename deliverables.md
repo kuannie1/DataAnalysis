@@ -4,8 +4,7 @@ layout: template
 filename: deliverables
 ---
 
-## Deliverables
-# Links to:
+# Deliverables
 - [Project Proposal](https://drive.google.com/file/d/0B7RvJwJU3DLBSTdmRW5GbzNOMXc/view?usp=sharing)
 - [Technical Review 1](https://drive.google.com/file/d/0B7RvJwJU3DLBV004SEJFZERDeGc/view?usp=sharing)
 - [Technical Review 2](https://drive.google.com/file/d/0B7RvJwJU3DLBT0w5SnhfTkI0cUU/view?usp=sharing)
