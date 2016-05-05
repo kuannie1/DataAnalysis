@@ -34,9 +34,6 @@ This function call produces a scatterplot comparing the public opinion and stock
 There are two different ways to run our code-one with pickle files, and one with real-time calling. 
 If you want to customize which company and stock prices you would like to see, use the real-time method where you replace values in the interactive_scatter_plot_take2.py. Unfortunately this method takes a long time. interactive_scatter_plot_take2.py is very inconvenient for a large date range.
 
-Alternatively, you can run interactive_scatter_plot.py, but the options you can pass are restrained. If you input these companies: BP, Valero, Chevron, and Exxon_Mobil, the plot will only display results in the year 2010. If you run these companies: Chipotle and El_Pollo_Loco, you can only get results in the year 2015. This method is a lot faster, because it doesn't have to webcrawl to run. 
-
-
-
+Alternatively, you can run interactive_scatter_plot.py, but the options you can pass are restrained. If you input these companies: BP, Valero, Chevron, and Exxon_Mobil, the plot will only display results in the year 2010. If you run these companies: Chipotle and El_Pollo_Loco, you can only get results in the year 2015. This method is a lot faster, because it doesn't have to webcrawl to run. If you use this option, you'll notice that interactive_scatter_plot.py has a variable called "ubuntu_username". Replace "anne" your name or username for your computer, because that variable is essential to finding the files. 
 
 
