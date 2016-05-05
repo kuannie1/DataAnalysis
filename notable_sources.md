@@ -4,7 +4,7 @@ layout: template
 filename: notable_sources
 ---
 
-# Attributions
+# Notable Sources
 - Yahoo Finance API: Allows ease of retrieving stock data from yahoo finance.
 - Selenium Webdriver: Helps scrape website results
 - Indico Sentiment Processor: Allows more accurate way to get sentiment data from the google webscraping.
