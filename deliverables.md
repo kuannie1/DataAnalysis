@@ -10,4 +10,4 @@ filename: deliverables
 - [Technical Review 1](https://www.google.com)
 - [Technical Review 2](https://www.google.com)
 - [Mid-Project Presentation](https://www.google.com)
-- [Project Poster](https://www.google.com)
+- [Project Poster](https://github.com/kuannie1/DataAnalysis/blob/master/ProjectPosterV3.pdf)
